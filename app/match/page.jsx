@@ -659,7 +659,7 @@ export default function MatchPage() {
           จับคู่สัตว์เลี้ยง
         </h1>
         <p className="text-center text-gray-600 dark:text-gray-300 mb-6 max-w-md mx-auto">
-          
+          ปัดขวาเพื่อแสดงความสนใจ หรือปัดซ้ายเพื่อข้าม เมื่อทั้งสองฝ่ายสนใจกัน จะเกิดการจับคู่!
         </p>
       </div>
 
