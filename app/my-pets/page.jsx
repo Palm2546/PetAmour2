@@ -267,7 +267,7 @@ export default function MyPets() {
               คุณแน่ใจหรือไม่ว่าต้องการลบ {petToDelete?.name}? การกระทำนี้ไม่สามารถย้อนกลับได้ และรูปภาพจะถูกลบด้วย
             </AlertDialogDescription>
           </AlertDialogHeader>
-          <AlertDialogFooter>
+          <AlertDialogFooter className="flex justify-end gap-2">
             <AlertDialogCancel onClick={() => setShowDeleteDialog(false)}>ยกเลิก</AlertDialogCancel>
             <AlertDialogAction onClick={handleDelete} className="bg-red-600 hover:bg-red-700" disabled={isDeleting}>
               {isDeleting ? "กำลังลบ..." : "ลบ"}
