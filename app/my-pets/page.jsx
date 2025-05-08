@@ -267,19 +267,21 @@ export default function MyPets() {
               คุณแน่ใจหรือไม่ว่าต้องการลบ {petToDelete?.name}? การกระทำนี้ไม่สามารถย้อนกลับได้ และรูปภาพจะถูกลบด้วย
             </AlertDialogDescription>
           </AlertDialogHeader>
-          <AlertDialogFooter className="flex sm:justify-end">
-  <div className="flex w-full gap-2 sm:w-auto">
-    {/* ปรับลำดับ: ให้ปุ่มลบอยู่ทางซ้าย, ยกเลิกอยู่ทางขวา */}
-    <AlertDialogAction
-      onClick={handleDelete}
-      className="flex-1 bg-red-600 hover:bg-red-700 sm:flex-initial"
-      disabled={isDeleting}
-    >
-      {isDeleting ? "กำลังลบ..." : "ลบ"}
-    </AlertDialogAction>
-    <AlertDialogCancel className="flex-1 sm:flex-initial">ยกเลิก</AlertDialogCancel>
-  </div>
-</AlertDialogFooter>
+          <AlertDialogFooter className="flex flex-row justify-end gap-2">
+  {/* ปุ่มลบ */}
+  <AlertDialogAction
+    onClick={handleDelete}
+    className="bg-red-600 hover:bg-red-700 w-24"
+    disabled={isDeleting}
+  >
+    {isDeleting ? "กำลังลบ..." : "ลบ"}
+  </AlertDialogAction>
+
+  {/* ปุ่มยกเลิก */}
+      <AlertDialogCancel className="w-24">
+               ยกเลิก
+        </AlertDialogCancel>
+          </AlertDialogFooter>
         </AlertDialogContent>
       </AlertDialog>
     </div>
