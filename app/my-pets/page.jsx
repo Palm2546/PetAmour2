@@ -268,17 +268,18 @@ export default function MyPets() {
             </AlertDialogDescription>
           </AlertDialogHeader>
           <AlertDialogFooter className="flex sm:justify-end">
-            <div className="flex w-full gap-2 sm:w-auto">
-              <AlertDialogCancel className="flex-1 sm:flex-initial">ยกเลิก</AlertDialogCancel>
-              <AlertDialogAction
-                onClick={handleDelete}
-                className="flex-1 bg-red-600 hover:bg-red-700 sm:flex-initial"
-                disabled={isDeleting}
-              >
-                {isDeleting ? "กำลังลบ..." : "ลบ"}
-              </AlertDialogAction>
-            </div>
-          </AlertDialogFooter>
+  <div className="flex w-full gap-2 sm:w-auto">
+    {/* ปรับลำดับ: ให้ปุ่มลบอยู่ทางซ้าย, ยกเลิกอยู่ทางขวา */}
+    <AlertDialogAction
+      onClick={handleDelete}
+      className="flex-1 bg-red-600 hover:bg-red-700 sm:flex-initial"
+      disabled={isDeleting}
+    >
+      {isDeleting ? "กำลังลบ..." : "ลบ"}
+    </AlertDialogAction>
+    <AlertDialogCancel className="flex-1 sm:flex-initial">ยกเลิก</AlertDialogCancel>
+  </div>
+</AlertDialogFooter>
         </AlertDialogContent>
       </AlertDialog>
     </div>
