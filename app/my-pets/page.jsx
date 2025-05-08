@@ -18,6 +18,7 @@ import {
   AlertDialogHeader,
   AlertDialogTitle,
 } from "@/components/ui/alert-dialog"
+import "../alert-dialog-fix.css"
 
 export default function MyPets() {
   const router = useRouter()
@@ -267,20 +268,11 @@ export default function MyPets() {
               คุณแน่ใจหรือไม่ว่าต้องการลบ {petToDelete?.name}? การกระทำนี้ไม่สามารถย้อนกลับได้ และรูปภาพจะถูกลบด้วย
             </AlertDialogDescription>
           </AlertDialogHeader>
-          <AlertDialogFooter className="flex flex-row justify-end gap-2">
-  {/* ปุ่มลบ */}
-  <AlertDialogAction
-    onClick={handleDelete}
-    className="bg-red-600 hover:bg-red-700 w-24"
-    disabled={isDeleting}
-  >
-    {isDeleting ? "กำลังลบ..." : "ลบ"}
-  </AlertDialogAction>
-
-  {/* ปุ่มยกเลิก */}
-      <AlertDialogCancel className="w-24">
-               ยกเลิก
-        </AlertDialogCancel>
+          <AlertDialogFooter className="alert-dialog-footer">
+            <AlertDialogCancel>ยกเลิก</AlertDialogCancel>
+            <AlertDialogAction onClick={handleDelete} className="bg-red-600 hover:bg-red-700" disabled={isDeleting}>
+              {isDeleting ? "กำลังลบ..." : "ลบ"}
+            </AlertDialogAction>
           </AlertDialogFooter>
         </AlertDialogContent>
       </AlertDialog>

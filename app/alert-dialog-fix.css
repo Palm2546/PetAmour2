@@ -1,0 +1,14 @@
+/* แก้ไขปัญหาปุ่มไม่อยู่ในแนวเดียวกัน */
+.alert-dialog-footer {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: flex-end !important;
+    align-items: center !important;
+    gap: 8px !important;
+  }
+  
+  .alert-dialog-footer button {
+    height: 40px !important;
+    margin: 0 !important;
+  }
+  
