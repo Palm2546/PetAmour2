@@ -131,6 +131,13 @@ export default function DiscoverPage() {
     )
   })
 
+  // Function to navigate to pet detail page
+  const navigateToPetDetail = (petId, e) => {
+    // Prevent event bubbling if clicking on buttons inside the card
+    if (e.target.closest("button")) return
+    router.push(`/pets/${petId}`)
+  }
+
   // Function to handle showing interest in a pet
   const handleShowInterest = async (pet) => {
     try {
@@ -247,7 +254,11 @@ export default function DiscoverPage() {
       ) : (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {filteredPets.map((pet) => (
-            <Card key={pet.id} className="overflow-hidden h-full transition-all duration-200 hover:shadow-md">
+            <Card
+              key={pet.id}
+              className="overflow-hidden h-full transition-all duration-200 hover:shadow-md cursor-pointer"
+              onClick={(e) => navigateToPetDetail(pet.id, e)}
+            >
               <div className="aspect-square relative">
                 {(() => {
                   let imageUrl = pet.image_url
